@@ -1,0 +1,27 @@
+body {
+    font-size:10px;
+    line-height:1.2;
+}
+
+.w3-table td, .w3-table th, .w3-table-all td, .w3-table-all th {
+    padding: 5px 5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 5px 0;
+}
+
+@media print {
+    .no-print, .no-print * {
+      display: none !important;
+    }
+}
+
+@media screen {
+    #cal-nav {
+        width: 250px;
+    }
+    #cal-container {
+        margin-left: 250px;
+    }
+}
