@@ -35,6 +35,13 @@ DateTime.prototype.getMonth = function() {
 };
 
 /**
+ * Gets the year of the date.
+ */
+DateTime.prototype.getYear = function() {    
+    return (this.date.getYear()); 
+};
+
+/**
  * Gets the day of week of the date.
  * 0 - Sunday, ..., 6 - Saturday
  * 0 - Monday, ..., 6 - Sunday
