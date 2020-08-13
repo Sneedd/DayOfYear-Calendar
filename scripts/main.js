@@ -74,6 +74,7 @@ RushCalendar.prototype.init = function() {
 
 RushCalendar.prototype.render = function() {
 
+    var today = new Date();
     for (var month = 1; month < 13; ++month)
     {
         // Render month name
@@ -99,10 +100,14 @@ RushCalendar.prototype.render = function() {
         {            
             var weekElement = $("<tr></tr>");
             for (var j = 0; j < 7; ++j)
-            {            
+            {   
+                var todayClass = "";
+                if (today.getYear() == currentDate.getYear() && today.getMonth()+1 == currentDate.getMonth() && today.getDate() == currentDate.getDay()) {
+                    todayClass = "cal-today";
+                }
                 if (currentDate.getMonth() != month)                
                 {
-                    weekElement.append("<td class=\"w3-text-light-gray\">" 
+                    weekElement.append("<td class=\"w3-text-light-gray "+todayClass+"\">" 
                         + currentDate.getDay() 
                         + "<br/>" 
                         + currentDate.getDayOfYear() 
@@ -110,7 +115,7 @@ RushCalendar.prototype.render = function() {
                 }
                 else
                 {
-                    weekElement.append("<td>" 
+                    weekElement.append("<td class=\""+todayClass+"\">" 
                         + currentDate.getDay() 
                         + "<br/>" 
                         + currentDate.getDayOfYear() 
